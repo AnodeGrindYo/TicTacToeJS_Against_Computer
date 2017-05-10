@@ -1,0 +1,202 @@
+body
+{
+    background-color: black;
+    color: #99ff00;
+}
+
+#header
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    z-index: 1;
+}
+
+#head-title
+{
+    color: black;
+    background-color: #99ff00;
+    border: 3px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    font-family: "Lucida Console", Lucida, monospace;
+    font-size: 5em;
+    text-align: center; 
+}
+
+#panneau-info
+{
+    background-color: #99ff00;
+    color: black;
+    left: 2em;
+    padding: 10px;
+    padding-right: 45px;
+    box-shadow: 0px 0px 50px 10px #559900;
+    border: 3px solid black;
+    width : 20%;
+    float : left;
+}
+
+#panneau-info:hover
+{
+    box-shadow: 0px 0px 50px 10px #99ff00;
+}
+
+#plateau
+{
+    margin-right: 33%;
+    margin-left: 35.5%;
+    text-align: center;
+    box-shadow: 0px 0px 50px 10px #559900;
+}
+
+#plateau:hover
+{
+    box-shadow: 0px 0px 50px 10px #99ff00;
+}
+
+td
+{
+    height: 11em;
+    width : 11em;
+    border: 3px solid black;
+    background-color: #99ff00;
+    color: black;
+    font-size: 100%;
+}
+
+td:hover
+{
+    box-shadow: 0px 0px 100px 10px #99ff00;
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -ms-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    transform:scale(1.2);
+}
+
+
+
+.paninfo
+{
+    font-family: "Lucida Console", Lucida, monospace;
+    background-color: #bbff00;
+    box-shadow: 5px 5px 10px 0px black;
+    position: relative;
+}
+
+.paninfo:hover
+{
+    -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -ms-transform:scale(1.1);
+    -o-transform:scale(1.1);
+    transform:scale(1.1);
+    left: 1.5em;
+    box-shadow: 5px 5px 10px 0px black;
+}
+
+#content
+{
+    /*position: relative;/**/
+    /*z-index: 1;*/
+}
+
+.jeu
+{
+    margin-top: 10em;
+    vertical-align: top;
+}
+
+#bckgrnd
+{
+    z-index: -1;
+    position: fixed;
+    top: 0px;
+}
+
+.rotate-chars span
+{
+    display: inline-block;
+    position: relative;
+    padding: 0px /*0px*/;
+    transition: 0.8s;
+    transform: rotateY(0deg);
+    -webkit-transition: 0.8s; 
+    transition: 0.8s;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.rotate-chars span.active 
+{
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+}
+
+@media screen and (max-width: 900px) 
+{
+    .rotate-chars 
+    {
+        font-size: 126px;
+    }
+}
+@media screen and (max-width: 749px) 
+{
+    .rotate-chars 
+    {
+        font-size: 100px;
+    }
+}
+@media screen and (max-width: 600px) 
+{
+    .rotate-chars
+    {
+        font-size: 76px;
+    }
+}
+@media screen and (max-width: 500px) 
+{
+    .rotate-chars 
+    {
+        font-size: 56px;
+    }
+}
+@media screen and (max-width: 400px) 
+{
+    .rotate-chars 
+    {
+        font-size: 36px;
+    }
+}
+
+.boutons
+{
+    text-align: center;
+    text-shadow: 1px 5px 10px #222;
+}
+
+.bttn
+{
+    padding: 5px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.bttn:hover
+{
+    cursor: hand;
+    cursor: pointer;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    text-shadow: 1px 5px 20px #222;
+}
+
+.bttn:active
+{
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+}
+
