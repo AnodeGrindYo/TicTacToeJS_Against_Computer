@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Partie</title>
+    <link rel="stylesheet" type="text/css" href="partie.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    
+    <!-- ARRIERE-PLAN -->
+    <canvas id="bckgrnd"></canvas>
+    
+    <!-- HEADER -->
+       <div id="header"><h1 id="head-title" onclick="startEverything()"><div class="rotate-chars">Tic Tac Toe</div></h1></div>
+       
+    <!-- PREMIER PLAN -->
+    <div id="content">          
+       
+       <!-- PLATEAU DE JEU -->
+        <table id="plateau" class="jeu">
+            <tr>
+                <td id="case1" onclick="play('case1')"></td>
+                <td id="case2" onclick="play('case2')"></td>
+                <td id="case3" onclick="play('case3')"></td>
+            </tr>
+            <tr>
+                <td id="case4" onclick="play('case4')"></td>
+                <td id="case5" onclick="play('case5')"></td>
+                <td id="case6" onclick="play('case6')"></td>
+            </tr>
+            <tr>
+                <td id="case7" onclick="play('case7')"></td>
+                <td id="case8" onclick="play('case8')"></td>
+                <td id="case9" onclick="play('case9')"></td>
+            </tr>
+        </table>
+        
+        
+    </div>
+    <!-- ANIMATION DE L'ARRIERE-PLAN -->
+    <script src="bckgrnd.min.js"></script>
+    
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- rotation des lettres -->
+    <script src="rotateletters.min.js"></script>
+    
+    <!--arbitre-->
+    <script src="playtictactoe.js"></script>
+</body>
+</html>

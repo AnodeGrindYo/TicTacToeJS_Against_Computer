@@ -23,19 +23,19 @@ function play(idCase)
         if(/*contenuCase != "O" && contenuCase != "X"*/contenuCase == '')
         {
             document.getElementById(idCase).innerHTML = "X";
-            checkVictory('X');
+            endGame = checkVictory('X');
             isfull = verifPlateauPlein();
         }
         else
         {
             return;    
         }
-        if (isfull == false)
+        if (isfull == false && endGame == false)
         {
             playerPlay = false;
             IAplay();
             isfull = verifPlateauPlein();
-            checkVictory('O');
+            endGame = checkVictory('O');
             playerPlay = true;
         }
     }
@@ -58,11 +58,11 @@ function IAplay()
     
     
     // l'IA vérifie si elle peut gagner
-    checkWhoCanWin('O', 'O', caseContent);
+    IAplayed = checkWhoCanWin('O', 'O', caseContent);
     // l'IA vérifie si le joueur peut gagner
     if (IAplayed == false)
     {
-        checkWhoCanWin('X', 'O', caseContent);
+        IAplayed = checkWhoCanWin('X', 'O', caseContent);
     }
     // si le centre est vide, l'IA joue au centre
     if (document.getElementById("case5").textContent == '' && IAplayed == false)
@@ -140,6 +140,7 @@ function checkWhoCanWin(pionachecker, pionajouer, caseContent)
                                 {
                                     document.getElementById("case1").innerHTML = pionajouer;
                                     IAplayed = true;
+                                    return true;
                                 }
                                 break;
                             }
@@ -150,6 +151,7 @@ function checkWhoCanWin(pionachecker, pionajouer, caseContent)
                                 {
                                     document.getElementById("case2").innerHTML = pionajouer;
                                     IAplayed = true;
+                                    return true;
                                 }
                                 break;
                             }
@@ -161,6 +163,7 @@ function checkWhoCanWin(pionachecker, pionajouer, caseContent)
                                 {
                                     document.getElementById("case3").innerHTML = pionajouer;
                                     IAplayed = true;
+                                    return true;
                                 }
                                 break;
                             }
@@ -171,6 +174,7 @@ function checkWhoCanWin(pionachecker, pionajouer, caseContent)
                                 {
                                     document.getElementById("case4").innerHTML = pionajouer;
                                     IAplayed = true;
+                                    return true;
                                 }
                                 break;
                             }
@@ -183,6 +187,7 @@ function checkWhoCanWin(pionachecker, pionajouer, caseContent)
                                 {
                                     document.getElementById("case5").innerHTML = pionajouer;
                                     IAplayed = true;
+                                    return true;
                                 }
                                 break;
                             }
@@ -193,6 +198,7 @@ function checkWhoCanWin(pionachecker, pionajouer, caseContent)
                                 {
                                     document.getElementById("case6").innerHTML = pionajouer;
                                     IAplayed = true;
+                                    return true;
                                 }
                                 break;
                             }
@@ -204,6 +210,7 @@ function checkWhoCanWin(pionachecker, pionajouer, caseContent)
                                 {
                                     document.getElementById("case7").innerHTML = pionajouer;
                                     IAplayed = true;
+                                    return true;
                                 }
                                 break;
                             }
@@ -214,6 +221,7 @@ function checkWhoCanWin(pionachecker, pionajouer, caseContent)
                                 {
                                     document.getElementById("case8").innerHTML = pionajouer;
                                     IAplayed = true;
+                                    return true;
                                 }
                                 break;
                             }
@@ -225,6 +233,7 @@ function checkWhoCanWin(pionachecker, pionajouer, caseContent)
                                 {
                                     document.getElementById("case9").innerHTML = pionajouer;
                                     IAplayed = true;
+                                    return true;
                                 }
                                 break;
                             }
@@ -263,12 +272,18 @@ function checkVictory(pion)
         {
             alert("Partie terminée\nVous avez perdu !");
             viderplateau();
+            return true;
         }
         else if (pion == 'X')
         {
             alert("Bravo! vous avez gagné");
             viderplateau();
+            return true;
         }
+    }
+    else
+    {
+        return false;
     }
 };
 
@@ -293,4 +308,5 @@ function verifPlateauPlein()
     {
         return false;
     }
+    
 };
