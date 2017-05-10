@@ -8,7 +8,6 @@ var pionajouer;
 var IAplayed = false;
 var clicks = 0;
 var caseContent = new Array('');
-var pageUrl = "file:///C:/Users/Eido/Desktop/projetJEE/versionJouable/partie.html";
 /*var CanWin = false;*/
 
 
@@ -21,11 +20,15 @@ function play(idCase)
         IAplayed = false;
         /*alert('function play ok');*/
         var contenuCase = document.getElementById(idCase).textContent;
-        if(contenuCase != "O" && contenuCase != "X")
+        if(/*contenuCase != "O" && contenuCase != "X"*/contenuCase == '')
         {
             document.getElementById(idCase).innerHTML = "X";
             checkVictory('X');
             isfull = verifPlateauPlein();
+        }
+        else
+        {
+            return;    
         }
         if (isfull == false)
         {
